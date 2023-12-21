@@ -53,7 +53,7 @@ public class UserController {
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new ResourceNotFoundException("User not found for this id :: " + userId));
 
-        user.setEmail(userDetails.getEmail());
+        user.setEmailAddress(userDetails.getEmailAddress());
         user.setLastName(userDetails.getLastName());
         user.setFirstName(userDetails.getFirstName());
         final User updatedUser = userRepository.save(user);

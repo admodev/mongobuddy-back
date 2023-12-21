@@ -3,19 +3,19 @@ package com.technorth.mongobuddyback.Domain.User;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "user")
+@Table(name = "users")
 public class User {
     private long id;
     private String firstName;
     private String lastName;
-    private String email;
+    private String emailAddress;
 
     public User() {}
 
-    public User(String firstName, String lastName, String email) {
+    public User(String firstName, String lastName, String emailAddress) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.email = email;
+        this.emailAddress = emailAddress;
     }
 
     @Id
@@ -47,11 +47,11 @@ public class User {
     }
 
     @Column(name = "email_address", nullable = false)
-    public String getEmail() {
-        return email;
+    public String getEmailAddress() {
+        return emailAddress;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmailAddress(String email) {
+        this.emailAddress = emailAddress;
     }
 }
